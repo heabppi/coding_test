@@ -28,3 +28,44 @@ def solution(arr, divisor):
         answer = [-1]
     return answer
 
+# 음양 더하기
+def solution(absolutes, signs):
+    cal = 0
+    for num, sign in zip(absolutes, signs):
+        if sign:
+            cal += num
+        else:
+            cal -= num
+    return cal
+
+# 없는 숫자 더하기
+def solution(numbers):
+    all_num = [1,2,3,4,5,6,7,8,9,0]
+
+    all_num, numbers = set(all_num), set(numbers)
+
+    missing_num = all_num - numbers
+
+    answer = sum(missing_num)
+    return answer
+
+def solution(numbers):
+    all_num = [1,2,3,4,5,6,7,8,9,0]
+    
+    answer = sum(all_num) - sum(numbers)
+    return answer
+
+# 제일 작은 수 제거하기(remove, min)
+def solution(arr):
+    least_num = min(arr)
+    arr.remove(least_num)
+
+    if not arr:
+        return [-1]
+
+    return arr
+
+# 핸드폰 번호 가리기
+def solution(phone_number):
+
+    return '*' * (len(phone_number) - 4) + phone_number[-4:]
